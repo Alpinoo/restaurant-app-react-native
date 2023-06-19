@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize:18,
         fontWeight:'bold',// makes element heavier
-        marginLeft:15
+        marginLeft:15,
+        marginBottom:5
     }
 })
 
