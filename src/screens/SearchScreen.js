@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { View,Text,StyleSheet, } from "react-native";
+import { View,Text,StyleSheet,ScrollView } from "react-native";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
 import ResultsList from "../components/ResultsList";
@@ -24,17 +24,21 @@ const SearchScreen =()=>{
         />
             {errorMessage?<Text>{errorMessage}</Text>:null}
             <Text>There are {results.length} results</Text>
-            <ResultsList result={filterByPrice("$")} title="Cost Effective"/>
-            <ResultsList result={filterByPrice("$$")} title="Bit Pricier"/>
-            <ResultsList result={filterByPrice("$$$")} title="Big Spender!"/>
-            <ResultsList result={filterByPrice("$$$$")} title="Richie Rich!"/>
+            <ScrollView>
+                <ResultsList result={filterByPrice("$")} title="Cost Effective"/>
+                <ResultsList result={filterByPrice("$$")} title="Bit Pricier"/>
+                <ResultsList result={filterByPrice("$$$")} title="Big Spender!"/>
+                <ResultsList result={filterByPrice("$$$$")} title="Richie Rich!"/>
+            </ScrollView> 
         </View>
     )
+    //?ScrollView is for scrolling down when content on screen is too much for screen size
 }
 
 const styles = StyleSheet.create({
     background:{
-        backgroundColor:'white'
+        backgroundColor:'white',
+        flex:1 //added this because on android, we can't make scroll in fully
     }
 })
 

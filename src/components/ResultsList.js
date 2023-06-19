@@ -8,6 +8,7 @@ const ResultsList = ({title,result})=>{
         <View>
             <Text style={styles.title}>{title}</Text>
             <FlatList 
+                showsHorizontalScrollIndicator={false}//disable horizontal scroll bar
                 horizontal //= horizontal={true}
                 data={result}
                 keyExtractor={(result)=>result.id}//id is unique for all restaurants
