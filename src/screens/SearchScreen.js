@@ -16,7 +16,7 @@ const SearchScreen =()=>{
     }
 
     return(
-        <View style={styles.background}>
+        <>
         <SearchBar 
             term={searchTerm}   
             onSearchTermChanged={setSearchTerm}//if just want to pass value and call function, we can use this instead of an arrow function
@@ -30,9 +30,10 @@ const SearchScreen =()=>{
                 <ResultsList result={filterByPrice("$$$")} title="Big Spender!"/>
                 <ResultsList result={filterByPrice("$$$$")} title="Richie Rich!"/>
             </ScrollView> 
-        </View>
+        </>
     )
     //?ScrollView is for scrolling down when content on screen is too much for screen size
+    //?we don't have to use a view tag to view different components. Instead, we can use empty tags (<> </>)
 }
 
 const styles = StyleSheet.create({
