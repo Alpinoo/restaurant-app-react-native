@@ -23,7 +23,6 @@ const SearchScreen =()=>{
             onSearchTermSubmitted={()=>searchApi(searchTerm)}
         />
             {errorMessage?<Text>{errorMessage}</Text>:null}
-            <Text>There are {results.length} results</Text>
             <ScrollView>
                 <ResultsList result={filterByPrice("$")} title="Cost Effective"/>
                 <ResultsList result={filterByPrice("$$")} title="Bit Pricier"/>

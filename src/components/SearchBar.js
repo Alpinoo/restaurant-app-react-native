@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
         borderRadius:5, //for edges to be rounded
         marginHorizontal:15, //bar to standing off the edges
         flexDirection:'row',//to see input near icon, instead of below
-        marginTop:15 //for bar to distinguish from header of the page
+        marginTop:15, //for bar to distinguish from header of the page
+        marginBottom:10
 
     },
     inputStyle:{
