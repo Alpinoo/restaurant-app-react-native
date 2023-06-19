@@ -28,7 +28,7 @@ export default ()=>{
     }
     //for giving search an initial search.
     // searchApi('pasta') this is bad code because due to it's in component, it'll be called forever.
-    useEffect(()=>{searchApi('burger')},[])
+    useEffect(()=>{searchApi('turkish')},[])
 
     return [searchApi,results,errorMessage]//?elements we're using in SearchScreen
 }

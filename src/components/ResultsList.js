@@ -23,7 +23,8 @@ const ResultsList = ({title,result})=>{
 const styles = StyleSheet.create({
     title:{
         fontSize:18,
-        fontWeight:'bold'// makes element heavier
+        fontWeight:'bold',// makes element heavier
+        marginLeft:15
     }
 })
 
