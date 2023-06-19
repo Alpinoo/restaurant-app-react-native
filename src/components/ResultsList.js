@@ -1,5 +1,6 @@
 import React from "react";
 import { View,StyleSheet,Text,FlatList,TouchableOpacity } from "react-native";
+import { withNavigation } from "react-navigation";
 import ResultsDetail from "./ResultsDetail";
 //?we use FlatList for rendering list of results
 
@@ -34,4 +35,5 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ResultsList
+//!Normally, we have to pass navigation to searchScreen, then it passes to ResultsList. It's not very effective because SearchScreen doesn't need navigation. Instead, we wrap component with withNavigation so that ResultsList can use navigation without needing to be declared in searchScreen
+export default withNavigation(ResultsList) 
