@@ -5,6 +5,9 @@ import ResultsDetail from "./ResultsDetail";
 //?we use FlatList for rendering list of results
 
 const ResultsList = ({title,result,navigation})=>{//?navigation is from props object that passed from parent
+    if(!result.length){ //? it won't render whole screen while waiting and categories which has no element  
+        return null
+    }
     return(
         <View>
             <Text style={styles.title}>{title}</Text>
@@ -15,7 +18,7 @@ const ResultsList = ({title,result,navigation})=>{//?navigation is from props ob
                 keyExtractor={(result)=>result.id}//id is unique for all restaurants
                 renderItem={({item})=>{
                     return (
-                    <TouchableOpacity onPress={()=>navigation.navigate('ShowResults')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ShowResults',{id:item.id})}>
                         <ResultsDetail result={item}/>
                     </TouchableOpacity>
                     )
