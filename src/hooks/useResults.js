@@ -30,5 +30,5 @@ export default ()=>{
     // searchApi('pasta') this is bad code because due to it's in component, it'll be called forever.
     useEffect(()=>{searchApi('turkish')},[])
 
-    return [searchApi,results,errorMessage]//?elements we're using in SearchScreen
+    return {searchApi,results,errorMessage}//?elements we're using in SearchScreen
 }
